@@ -2,7 +2,6 @@
 
 #include <string.h>
 #include "test/catch.hpp"
-#include "typewise-alert.h"
 
 TEST_CASE("test something") {
 //  REQUIRE(inferBreach(35, 20, 30) == TOO_HIGH);
