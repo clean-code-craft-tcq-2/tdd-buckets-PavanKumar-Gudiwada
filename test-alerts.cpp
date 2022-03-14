@@ -18,7 +18,7 @@ TEST_CASE("find range in 1 block of continuous range array") {
   REQUIRE((ranges[0].numberOfElements) == 2);
 }
 
-TEST_CASE("find range in 1 block of continuous range array") {
+TEST_CASE("find range in 1 block of continuous range array with different input") {
   int arr[4] = {4,5,6,7};
   struct ranges* ranges;
   
