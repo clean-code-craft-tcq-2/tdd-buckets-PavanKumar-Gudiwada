@@ -35,7 +35,7 @@ struct ranges* findRanges(const void* values, int numberOfValues)
 	return finalRanges;
 }
 
-void printRages(struct ranges* finalRangesToPrint)
+void printRanges(struct ranges* finalRangesToPrint)
 {
 	printf("\nRange, Readings\n");
     for (int i = 0 ; i <= numberOfRanges ; i++)

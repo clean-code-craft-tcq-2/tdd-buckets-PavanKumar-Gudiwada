@@ -7,4 +7,4 @@ struct ranges{
 
 extern struct ranges* findRanges(const void* values, int numberOfValues);
 
-extern void printRages();
+extern void printRanges(struct ranges* finalRangesToPrint);
