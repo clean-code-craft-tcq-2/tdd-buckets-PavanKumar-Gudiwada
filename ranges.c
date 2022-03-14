@@ -1,12 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "sort.h"
-
-struct ranges{
-	int lowerLim;
-	int upperLim;
-	int numberOfElements;
-};
+#include "ranges.h"
 
 struct ranges finalRanges[5];
 int numberOfRanges = 0;
