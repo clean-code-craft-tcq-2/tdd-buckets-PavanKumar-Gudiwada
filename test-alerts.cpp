@@ -11,6 +11,8 @@ TEST_CASE("find range in 1 block of continuous range array") {
   
   ranges = findRanges(arr,2);
   
+  printRages(ranges);
+  
   REQUIRE(ranges[0].lowerLim,4);
   REQUIRE(ranges[0].upperLim,5);
   REQUIRE(ranges[0].numberOfElements,2);
@@ -22,6 +24,8 @@ TEST_CASE("find range in 1 block of continuous range array") {
   
   ranges = findRanges(arr,4);
   
+  printRages(ranges);
+  
   REQUIRE(ranges[0].lowerLim,4);
   REQUIRE(ranges[0].upperLim,7);
   REQUIRE(ranges[0].numberOfElements,4);
@@ -32,6 +36,8 @@ TEST_CASE("find ranges in 2 blocks continuous range array") {
   struct ranges* ranges;
   
   ranges = findRanges(arr,7);
+  
+  printRages(ranges);
   
   REQUIRE(ranges[0].lowerLim,3);
   REQUIRE(ranges[0].upperLim,5);
