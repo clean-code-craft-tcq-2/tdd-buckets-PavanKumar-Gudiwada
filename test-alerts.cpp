@@ -13,9 +13,9 @@ TEST_CASE("find range in 1 block of continuous range array") {
   
   printRanges(ranges);
   
-  REQUIRE((ranges[0].lowerLim),4);
-  REQUIRE((ranges[0].upperLim),5);
-  REQUIRE((ranges[0].numberOfElements),2);
+  REQUIRE((ranges[0].lowerLim) == 4);
+  REQUIRE((ranges[0].upperLim) == 5);
+  REQUIRE((ranges[0].numberOfElements) == 2);
 }
 
 TEST_CASE("find range in 1 block of continuous range array") {
@@ -26,9 +26,9 @@ TEST_CASE("find range in 1 block of continuous range array") {
   
   printRanges(ranges);
   
-  REQUIRE((ranges[0].lowerLim),4);
-  REQUIRE((ranges[0].upperLim),7);
-  REQUIRE((ranges[0].numberOfElements),4);
+  REQUIRE((ranges[0].lowerLim) == 4);
+  REQUIRE((ranges[0].upperLim) == 7);
+  REQUIRE((ranges[0].numberOfElements) == 4);
 }
 
 TEST_CASE("find ranges in 2 blocks continuous range array") {
@@ -39,11 +39,11 @@ TEST_CASE("find ranges in 2 blocks continuous range array") {
   
   printRanges(ranges);
   
-  REQUIRE((ranges[0].lowerLim),3);
-  REQUIRE((ranges[0].upperLim),5);
-  REQUIRE((ranges[0].numberOfElements),4);
+  REQUIRE((ranges[0].lowerLim) == 3);
+  REQUIRE((ranges[0].upperLim) == 5);
+  REQUIRE((ranges[0].numberOfElements) == 4);
   
-  REQUIRE((ranges[1].lowerLim),10);
-  REQUIRE((ranges[1].upperLim),12);
-  REQUIRE((ranges[1].numberOfElements),3);
+  REQUIRE((ranges[1].lowerLim) == 10);
+  REQUIRE((ranges[1].upperLim) == 12);
+  REQUIRE((ranges[1].numberOfElements) == 3);
 }
