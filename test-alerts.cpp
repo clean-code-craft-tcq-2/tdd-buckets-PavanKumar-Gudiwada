@@ -11,7 +11,7 @@ TEST_CASE("find range in 1 block of continuous range array") {
   
   ranges = findRanges(arr,2);
   
-  printRages(ranges);
+  printRanges(ranges);
   
   REQUIRE(ranges[0].lowerLim,4);
   REQUIRE(ranges[0].upperLim,5);
@@ -24,7 +24,7 @@ TEST_CASE("find range in 1 block of continuous range array") {
   
   ranges = findRanges(arr,4);
   
-  printRages(ranges);
+  printRanges(ranges);
   
   REQUIRE(ranges[0].lowerLim,4);
   REQUIRE(ranges[0].upperLim,7);
@@ -37,7 +37,7 @@ TEST_CASE("find ranges in 2 blocks continuous range array") {
   
   ranges = findRanges(arr,7);
   
-  printRages(ranges);
+  printRanges(ranges);
   
   REQUIRE(ranges[0].lowerLim,3);
   REQUIRE(ranges[0].upperLim,5);
