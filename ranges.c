@@ -4,7 +4,7 @@
 #include "ranges.h"
 
 struct ranges finalRanges[5];
-static int numberOfRanges = 0;
+int numberOfRanges = 0;
 
 static void categoriseValue(const void* values, int * controlVariable)
 {
