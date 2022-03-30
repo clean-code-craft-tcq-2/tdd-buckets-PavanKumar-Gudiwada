@@ -88,6 +88,9 @@ TEST_CASE("end to end test case, convert analog to amp value then find ranges") 
   REQUIRE(arr[6] != 12);//for a 12 bit number 4913 will cause an overflow ideally and hence this should be !=12
   REQUIRE(arr[6] == 2);
   
+  for(int i=0; i<7 ; i++)
+    printf("\n%d",arr[i]);
+  
   ranges = findRanges(arr,7);
   
   printRanges(ranges);
