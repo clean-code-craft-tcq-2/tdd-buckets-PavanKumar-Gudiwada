@@ -4,7 +4,7 @@
 #include "ranges.h"
 
 struct ranges finalRanges[5];
-int numberOfRanges = 0;
+static int numberOfRanges = 0;
 
 static void categoriseValue(const void* values, int * controlVariable)
 {
@@ -25,6 +25,7 @@ static void categoriseValue(const void* values, int * controlVariable)
 struct ranges* findRanges(const void* values, int numberOfValues)
 {
 	int i;
+	numberOfRanges = 0;//initialise before finding ranges
 	
 	sort(values, numberOfValues);
 	
