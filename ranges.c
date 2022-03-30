@@ -29,10 +29,6 @@ struct ranges* findRanges(const void* values, int numberOfValues)
 	
 	sort(values, numberOfValues);
 	
-	printf("sorted values\n");
-	for (int j = 0; j < numberOfValues ; j++)
-		printf("\n %d",((int*)values)[j]);
-	
 	finalRanges[numberOfRanges].lowerLim = ((int*)values)[0];
 	finalRanges[numberOfRanges].upperLim = ((int*)values)[1];
 	finalRanges[numberOfRanges].numberOfElements = 2;
