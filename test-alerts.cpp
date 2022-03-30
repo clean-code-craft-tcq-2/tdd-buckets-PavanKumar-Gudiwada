@@ -74,10 +74,10 @@ TEST_CASE("check if convert array function works") {
 }
 
 TEST_CASE("end to end test case, convert analog to amp value then find ranges") {
-  int arr[7] = {1146,1238,2047,1638,4094,4503,4913};//{3,3,5,4,10,11,12}
+  int arr[8] = {1146,1238,2047,1638,4094,4503,4913, 3684};//{3,3,5,4,10,11,12}
   struct ranges* ranges;
   
-  currentArrayConvertersD2A(arr,7);
+  currentArrayConvertersD2A(arr,8);
   REQUIRE(arr[0] == 3);
   REQUIRE(arr[1] == 3);
   REQUIRE(arr[2] == 5);
@@ -87,8 +87,9 @@ TEST_CASE("end to end test case, convert analog to amp value then find ranges") 
   REQUIRE(arr[5] == 1);
   REQUIRE(arr[6] != 12);//for a 12 bit number 4913 will cause an overflow ideally and hence this should be !=12
   REQUIRE(arr[6] == 2);
+  REQUIRE(arr[7] == 9);
   
-  ranges = findRanges(arr,7);
+  ranges = findRanges(arr,8);
   
   printRanges(ranges);
   
@@ -96,8 +97,8 @@ TEST_CASE("end to end test case, convert analog to amp value then find ranges") 
   REQUIRE((ranges[0].upperLim) == 5);
   REQUIRE((ranges[0].numberOfElements) == 6);
   
-  REQUIRE((ranges[1].lowerLim) == 10);
-  REQUIRE((ranges[1].upperLim) == 0);
-  REQUIRE((ranges[1].numberOfElements) == 1);
+  REQUIRE((ranges[1].lowerLim) == 9);
+  REQUIRE((ranges[1].upperLim) == 10);
+  REQUIRE((ranges[1].numberOfElements) == 2);
   
 }
