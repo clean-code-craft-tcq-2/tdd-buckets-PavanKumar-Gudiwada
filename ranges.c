@@ -3,7 +3,7 @@
 #include "sort.h"
 #include "ranges.h"
 
-struct ranges finalRanges[5];
+struct ranges finalRanges[5] = {{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}};
 static int numberOfRanges = 0;
 
 static void categoriseValue(const void* values, int * controlVariable)
