@@ -83,19 +83,21 @@ TEST_CASE("end to end test case, convert analog to amp value then find ranges") 
   REQUIRE(arr[2] == 5);
   REQUIRE(arr[3] == 4);
   REQUIRE(arr[4] == 10);
-  REQUIRE(arr[5] == 11);
+  REQUIRE(arr[5] != 11);/for a 12 bit number 4503 will cause an overflow ideally and hence this should be !=11
+  REQUIRE(arr[5] == 1);
   REQUIRE(arr[6] != 12);//for a 12 bit number 4913 will cause an overflow ideally and hence this should be !=12
+  REQUIRE(arr[6] == 2);
   
   ranges = findRanges(arr,7);
   
   printRanges(ranges);
   
-  REQUIRE((ranges[0].lowerLim) == 3);
+  REQUIRE((ranges[0].lowerLim) == 1);
   REQUIRE((ranges[0].upperLim) == 5);
-  REQUIRE((ranges[0].numberOfElements) == 4);
+  REQUIRE((ranges[0].numberOfElements) == 6);
   
   REQUIRE((ranges[1].lowerLim) == 10);
-  REQUIRE((ranges[1].upperLim) == 12);
-  REQUIRE((ranges[1].numberOfElements) == 3);
+  REQUIRE((ranges[1].upperLim) == 0);
+  REQUIRE((ranges[1].numberOfElements) == 1);
   
 }
