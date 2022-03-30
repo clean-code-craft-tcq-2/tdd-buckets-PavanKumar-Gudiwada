@@ -4,6 +4,7 @@
 #include "test/catch.hpp"
 #include "ranges.h"
 #include "sort.h"
+#include "converters.h"
 
 TEST_CASE("find range in 1 block of continuous range array") {
   int arr[2] = {4,5};
@@ -51,18 +52,18 @@ TEST_CASE("find ranges in 2 blocks continuous range array") {
 TEST_CASE("check if convert function works") {
   int analogValue = 1146, digitalValue;
   
-  digitalValue = currentConvereterA2D(analogValue);
+  digitalValue = currentConvereterD2A(analogValue);
   REQUIRE(digitalValue == 3);
   
   analogValue = 3400;
-  digitalValue = currentConvereterA2D(analogValue);
+  digitalValue = currentConvereterD2A(analogValue);
   REQUIRE(digitalValue == 8);
 }
 
 TEST_CASE("check if convert array function works") {
   int arr[7] = {3400,0,1146,4095,500,249,1238};
   
-  currentArrayConvertersA2D(arr,7);
+  currentArrayConvertersD2A(arr,7);
   REQUIRE(arr[0] == 8);
   REQUIRE(arr[1] == 0);
   REQUIRE(arr[2] == 3);
@@ -76,7 +77,7 @@ TEST_CASE("end to end test case, convert analog to amp value then find ranges") 
   int arr[7] = {1146,1238,2047,1638,4094,4503,4913};//{3,3,5,4,10,11,12}
   struct ranges* ranges;
   
-  currentArrayConvertersA2D(arr,7);
+  currentArrayConvertersD2A(arr,7);
   REQUIRE(arr[0] == 3);
   REQUIRE(arr[1] == 3);
   REQUIRE(arr[2] == 5);
