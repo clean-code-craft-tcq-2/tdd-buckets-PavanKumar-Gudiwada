@@ -2,6 +2,7 @@
 
 int currentConvereterD2A(int digitalValue)
 {
+	digitalValue = digitalValue % 4095;
 	return round(10.0f * digitalValue / 4094);
 }
 
