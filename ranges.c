@@ -6,7 +6,7 @@
 struct ranges finalRanges[5] = {{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}};
 static int numberOfRanges = 0;
 
-static void categoriseValue(const void* values, int * controlVariable)
+static void categoriseValue(const void* values, int * controlVariable, int numberOfValues)
 {
 	if((((int*)values)[*controlVariable] >= finalRanges[numberOfRanges].upperLim) && (((((int*)values)[*controlVariable-1]+1) == ((int*)values)[*controlVariable]) || ((((int*)values)[*controlVariable-1]) == ((int*)values)[*controlVariable])) )
 	{
@@ -16,8 +16,14 @@ static void categoriseValue(const void* values, int * controlVariable)
 	{
 		numberOfRanges++;
 		finalRanges[numberOfRanges].lowerLim = ((int*)values)[*controlVariable];
-		finalRanges[numberOfRanges].upperLim = ((int*)values)[*controlVariable+1];
-		finalRanges[numberOfRanges].numberOfElements = 2;
+		if(*controlVariable+1 < numberOfValues)
+		{
+			finalRanges[numberOfRanges].upperLim = ((int*)values)[*controlVariable+1];
+			finalRanges[numberOfRanges].numberOfElements = 2;
+		}else
+		{
+			finalRanges[numberOfRanges].numberOfElements = 1;
+		}
 		*controlVariable = *controlVariable+1;//increment i by 1 here and then immediate increment will be done by for loop
 	}
 }
@@ -25,7 +31,7 @@ static void categoriseValue(const void* values, int * controlVariable)
 struct ranges* findRanges(const void* values, int numberOfValues)
 {
 	int i;
-	numberOfRanges = 0;//initialise before finding ranges
+	numberOfRanges = 0;
 	
 	sort(values, numberOfValues);
 	
@@ -35,7 +41,7 @@ struct ranges* findRanges(const void* values, int numberOfValues)
 	
 	for(i = 2; i < numberOfValues; i++)
 	{
-		categoriseValue(values,&i);
+		categoriseValue(values,&i, numberOfValues);
 	}
 	
 	return finalRanges;
