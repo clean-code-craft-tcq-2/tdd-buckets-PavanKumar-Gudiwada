@@ -106,15 +106,15 @@ TEST_CASE("end to end test case, convert analog to amp value then find ranges") 
 TEST_CASE("check if convert function works for 10bit sensor type") {
   int digitalValue = 0, analogValue;
   
-  digitalValue = currentConvereterD2A(digitalValue,bits10);
+  analogValue = currentConvereterD2A(digitalValue,bits10);
   REQUIRE(analogValue == -15);
   
   digitalValue = 1022;
-  digitalValue = currentConvereterD2A(digitalValue,bits10);
+  analogValue = currentConvereterD2A(digitalValue,bits10);
   REQUIRE(analogValue == 15);
   
   digitalValue = 511;
-  digitalValue = currentConvereterD2A(digitalValue,bits10);
+  analogValue = currentConvereterD2A(digitalValue,bits10);
   REQUIRE(analogValue == 0);
 }
 
