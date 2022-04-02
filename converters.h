@@ -1,4 +1,9 @@
 
-extern int currentConvereterD2A(int);
+enum sensorTypes{
+	bits12 = 0,
+	bits10
+};
 
-void currentArrayConvertersD2A(const void * values, int numberOfValues);
+extern int currentConvereterD2A(int, enum sensorTypes);
+
+void currentArrayConvertersD2A(const void * values, int, enum sensorTypes);

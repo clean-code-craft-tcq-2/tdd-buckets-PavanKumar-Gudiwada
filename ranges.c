@@ -33,6 +33,7 @@ struct ranges* findRanges(const void* values, int numberOfValues)
 	int i;
 	numberOfRanges = 0;
 	
+	absoluteArray(values, numberOfValues);
 	sort(values, numberOfValues);
 	
 	finalRanges[numberOfRanges].lowerLim = ((int*)values)[0];

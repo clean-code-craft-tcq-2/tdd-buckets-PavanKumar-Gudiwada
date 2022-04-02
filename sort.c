@@ -13,3 +13,9 @@ void sort(const void* values, int numberOfValues)
 {
     qsort ((int*)values, numberOfValues, sizeof(int), compare);
 }
+
+void absoluteArray(const void* values, int numberOfValues)
+{
+	for(int i =0; i<numberOfValues ; i++)
+		((int*)values)[i] = abs(((int*)values)[i]);
+}
